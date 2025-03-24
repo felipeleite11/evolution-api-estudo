@@ -1,0 +1,99 @@
+// API Docs: https://doc.evolution-api.com/v2/api-reference/instance-controller/set-presence
+
+GET http://localhost:3000/evolution/instance/info HTTP/1.1
+
+###
+
+POST http://localhost:3000/evolution/number/check HTTP/1.1
+content-type: application/json
+
+{
+    "numbers": [
+		"5591981293338",
+		"5591986205055"
+	]
+}
+
+###
+
+POST http://localhost:3000/evolution/message/send_text HTTP/1.1
+content-type: application/json
+
+{
+    "message": "Minha mensagem de texto...",
+    "recipient": "5591981293338"
+}
+
+###
+
+POST http://localhost:3000/evolution/message/send_media HTTP/1.1
+content-type: application/json
+
+{
+    "recipient": "5591981293338",
+	"type": "image",
+	"media_url": "https://pikaso.cdnpk.net/private/production/1328382525/render.jpeg?token=exp=1746489600~hmac=aefb7db9af6e7889a7d474bd8fb7b5b89fcc8ce7e6eaef2f8ee2a9a9a672f83f"
+}
+
+###
+
+POST http://localhost:3000/evolution/message/send_audio HTTP/1.1
+content-type: application/json
+
+{
+    "recipient": "5591981293338",
+	"media_url": "https://integrare-os-minio.nyr4mj.easypanel.host/evolution/audio.mp3"
+}
+
+###
+
+POST http://localhost:3000/evolution/message/send_sticker HTTP/1.1
+content-type: application/json
+
+{
+    "recipient": "5591981293338",
+	"media_url": "https://integrare-os-minio.nyr4mj.easypanel.host/evolution/sticker.png"
+}
+
+###
+
+POST http://localhost:3000/evolution/message/send_typing HTTP/1.1
+content-type: application/json
+
+{
+    "recipient": "5591981293338",
+	"delay": 2000
+}
+
+###
+
+POST http://localhost:3000/evolution/message/send_recording HTTP/1.1
+content-type: application/json
+
+{
+    "recipient": "5591981293338",
+	"delay": 2000
+}
+
+###
+
+POST http://localhost:3000/evolution/message/send_list HTTP/1.1
+content-type: application/json
+
+{
+    "recipient": "5591981293338",
+	"delay": 2000,
+	"title": "Minha lista"
+}
+
+###
+
+POST http://localhost:3000/evolution/message/send_poll HTTP/1.1
+content-type: application/json
+
+{
+    "recipient": "5591981293338",
+	"delay": 2000,
+	"name": "Meu poll",
+	"selectableCount": 2
+}
