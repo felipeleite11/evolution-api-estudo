@@ -3,11 +3,11 @@ import { Router } from 'express'
 export const router = Router()
 
 router.post('/receive', async (req, res) => {
-	console.log(req.body)
+	// console.log(req.body)
 
 	const { data } = req.body
 	
-	if(data.message.messageType === 'documentMessage') {
+	if(data.messageType === 'documentMessage') {
 		console.log('documentMessage')
 		console.log(data.message.documentMessage)
 	}
