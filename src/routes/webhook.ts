@@ -12,7 +12,7 @@ router.post('/receive', async (req, res) => {
 		console.log(data.message.documentMessage)
 	}
 
-	if(data.message.messageType === 'conversation') {
+	if(data.messageType === 'conversation') {
 		console.log('conversation')
 		console.log(data.message.conversation)
 	}
